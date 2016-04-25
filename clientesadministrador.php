@@ -52,9 +52,9 @@
      <nav id="menu2">
        <ul>
  	     
- 	     <a href=""><li>Registrar Cliente</li></a>
+ 	     <a href="registrarcliente.php"><li>Registrar Cliente</li></a>
        
-       <a href=""><li>Consultar Cliente</li></a>
+       <a href="consultarcliente.php"><li>Consultar Cliente</li></a>
        </ul>
      </nav>
    </section>

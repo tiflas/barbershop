@@ -54,6 +54,7 @@
  	     
  	     <a href="registrarbarberia.php"><li>Registrar Barberia</li></a>
        <a href="consultarbarbeadmi.php"><li>Consultar Barberias</li></a>
+       <a href=""><li>Consultar Citas</li></a>
       
        </ul>
      </nav>

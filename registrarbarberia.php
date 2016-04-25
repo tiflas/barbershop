@@ -49,7 +49,7 @@
                         function(){
                               setTimeout(function(){
                                     window.location.href ="registrarbarberia.php";
-                              },2000)
+                              },1000)
                               });
                         }
                       }
@@ -107,7 +107,7 @@
           
                     <div>
                     <label >Identificacion Barberia:</label>
-                    <input type="number" name="id_barberia" id="barberiaid" min="1" max="1000000" step="1" required >
+                    <input type ="text" name="id_barberia" id="barberiaid" placeholder="Identificacion de Barberia" required >
                     </div>
 
                     <div>

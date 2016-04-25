@@ -4,7 +4,7 @@
 
      require_once("../barbershop/Model/db.conn.php");
 
-     require_once("../barbershop/Model/barberia.class.php");
+     require_once("../barbershop/Model/contactos.class.php");
 
     if(!isset($_SESSION["id_usuario"])){
       header("location: ../index.php");
@@ -69,15 +69,15 @@
      <table id="datatable" class="display">
       <thead>
         <tr>
-          <th>Id barberia</th>
+          <th>Id Cliente</th>
+          <th>Rol</th>
+          <th>Id Barberia</th>
           <th>Nombre</th>
-          <th>Direccion</th>
-          <th>Dias de Trabajo</th>
-          <th>Horario</th>
-          <th>Ciudad</th>
+          <th>Apellido</th>
           <th>Telefono</th>
+          <th>Direccion</th>
+          <th>Ciudad</th>
           <th>Correo</th>
-          <th>Celular</th>
           <th>Acciones</th>
           
         </tr>
@@ -87,8 +87,8 @@
       <?php
 
 
-      $barberias = Barberia::ReadAll();
-      foreach ($barberias as $row) {
+      $usuario = usuario::ReadAll();
+      foreach ($usuario as $row) {
 
         if($row["id_ciudad"] == 1){
           $ciudad = "Medellin";
@@ -97,20 +97,22 @@
         }elseif($row["id_ciudad"] == 3){
           $ciudad = "Cali";
         }
+       
         
         echo "<tr>
+                <td>".$row["id_usuario"]."</td>
+                <td>".$row["cod_rol"]."</td>
                 <td>".$row["id_barberia"]."</td>
                 <td>".$row["nombre"]."</td>
-                <td>".$row["direccion"]."</td>
-                <td>".$row["dias_de_trabajo"]."</td>
-                <td>".$row["horario"]."</td>
-                <td>".$ciudad."</td>
+                <td>".$row["apellido"]."</td>
                 <td>".$row["telefono"]."</td>
-                <td>".$row["correo"]."</td>
-                <td>".$row["celular"]."</td>
+                <td>".$row["direccion"]."</td>
+                <td>".$ciudad."</td>
+                <td>".$row["email"]."</td>
+               
                 <td>
-                  <a href='edita_barberia1.php?ui=".base64_encode($row["id_barberia"])."'><img class='acciones' src='img/modificar.png'/></a>
-                  <a href='../barbershop/Controller/barberia.controller.php?ui=".base64_encode($row["id_barberia"])."&acc=d'><img class='acciones' src='img/cajadebasura.jpg'/></a>
+                  <a href='edita_usuario1.php?ui=".base64_encode($row["id_usuario"])."'><img class='acciones' src='img/modificar.png'/></a>
+                  <a href='../barbershop/Controller/usuario.controller.php?ui=".base64_encode($row["id_usuario"])."&acc=d'><img class='acciones' src='img/cajadebasura.jpg'/></a>
                 </td>
               </tr>";
             }

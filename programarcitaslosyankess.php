@@ -52,7 +52,7 @@
      <nav id="menu2">
        <ul>
  	     <a href="registrarcitalosyankees.php"><li>Registrar Cita</li></a>
- 	     <a href=""><li>Consultar Citas</li></a>
+ 	     <a href="consultascliente.php"><li>Consultar Citas</li></a>
        </ul>
      </nav>
    </section>

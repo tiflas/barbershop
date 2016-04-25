@@ -20,41 +20,6 @@
 		return  $results;
 	}
 
-	function ReadAll(){
-        $conexion = barbershopweb::Connect();
-        $conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        $sql = "SELECT * FROM usuario";
-        $query = $conexion->prepare($sql);
-        $query->execute();
-        
-        $results = $query->fetchALL(PDO::FETCH_BOTH);
-        barbershopweb::Disconnect();
-        return $results;
-      }
-
-
-      function ReadbyId($id_usuario){
-          $conexion = barbershopweb::Connect();
-          $conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-          $sql = "SELECT * FROM usuario WHERE id_usuario=?";
-          $query = $conexion->prepare($sql);
-          $query->execute(array($codigo));
-          
-          $results = $query->fetch(PDO::FETCH_BOTH);
-          barbershopweb::Disconnect();
-          return $results;
-        }
-
-        function Delete($id_usuario){
-            $conexion = barbershopweb::Connect();
-            $conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            $sql = "DELETE FROM usuario WHERE id_usuario = ?";
-            $query = $conexion->prepare($sql);
-            $query->execute(array($codigo));
-            
-            barbershopweb::Disconnect();
-          }
-
  }
 
 ?>
